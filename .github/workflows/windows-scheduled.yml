@@ -1,0 +1,12 @@
+name: Simulated RMS Health Check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  rms-check:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run RMS HealthCheck
+        run: powershell -ExecutionPolicy Bypass -File ./scripts/RMS-HealthCheck.ps1
